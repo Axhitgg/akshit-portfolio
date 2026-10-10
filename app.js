@@ -5,6 +5,7 @@ const cases = {
     warranty: "WARRANTY: INACTIVE",
     quote: "The infotainment screen freezes occasionally, but the vehicle drives normally.",
     urgency: "Low",
+    consequence: "A routine screen issue needs the right technician, not the same review path as a safety fault.",
     route: [
       { kicker: "INTAKE", icon: "↙", title: "A request becomes a case.", description: "The API validates the customer and vehicle details, then checks the case ID to prevent a duplicate record.", review: "Not checked", outcome: "Case received", event: "Case accepted after validation and duplicate check.", status: "RECEIVED" },
       { kicker: "AI CLASSIFICATION", icon: "◈", title: "The screen issue is classified.", description: "AI extracts an infotainment issue, low urgency, and the skill needed for diagnosis. The structured result is saved with the case.", review: "Not checked", outcome: "Classified", event: "Infotainment issue classified as low urgency.", status: "CLASSIFIED" },
@@ -19,6 +20,7 @@ const cases = {
     warranty: "WARRANTY: ACTIVE",
     quote: "The high-voltage battery warning is on and the car suddenly loses power while driving.",
     urgency: "Critical",
+    consequence: "Loss of power while driving needs attention. The demo holds the case for a person instead of letting AI decide it alone.",
     route: [
       { kicker: "INTAKE", icon: "↙", title: "A serious symptom arrives.", description: "The request is validated and saved as one case. The description includes a warning light and loss of power while driving.", review: "Not checked", outcome: "Case received", event: "Safety-sensitive symptom received through case intake.", status: "RECEIVED" },
       { kicker: "AI CLASSIFICATION", icon: "⚡", title: "A possible battery fault is flagged.", description: "AI structures the report as a high-voltage system issue with critical urgency. This is an intake classification, not a vehicle diagnosis.", review: "Not checked", outcome: "Classified", event: "Possible high-voltage fault classified as critical.", status: "CRITICAL" },
@@ -33,6 +35,7 @@ const cases = {
     warranty: "WARRANTY: ACTIVE",
     quote: "Range has fallen sharply, and the vehicle needs a battery system inspection.",
     urgency: "High",
+    consequence: "Approval is not the same as readiness. Missing parts should stop a premature appointment proposal.",
     route: [
       { kicker: "INTAKE", icon: "↙", title: "The service request is captured.", description: "The customer, vehicle, and symptom are recorded after field validation and a case-ID duplicate check.", review: "Not checked", outcome: "Case received", event: "Battery range concern received and validated.", status: "RECEIVED" },
       { kicker: "AI CLASSIFICATION", icon: "◈", title: "Battery inspection is suggested.", description: "AI provides a structured battery-system category, high urgency, and a suitable technician skill for the next decision.", review: "Not checked", outcome: "Classified", event: "Case categorized for battery-system inspection.", status: "HIGH URGENCY" },
@@ -76,6 +79,7 @@ function render() {
   $("case-vehicle").textContent = data.vehicle;
   $("case-warranty").textContent = data.warranty;
   $("case-quote").textContent = `“${data.quote}”`;
+  $("scenario-consequence").textContent = data.consequence;
   $("case-status").textContent = frame.status;
   $("case-status").classList.toggle("is-critical", state.scenario === "critical" && state.step >= 1 && !state.criticalApproved);
   $("case-status").classList.toggle("is-warning", (state.scenario === "parts" || state.criticalApproved) && state.step >= 3);
