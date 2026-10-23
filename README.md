@@ -47,6 +47,8 @@ Interactive scenarios illustrate how a workflow is intended to behave. They shou
 
 The 23 October 2026 refresh updated the public contact email and LinkedIn URL, replaced the old DOCX download with the approved A4 PDF, and linked the Control Tower case study, demo script, synthetic evaluation and sanitised workflow. It does not claim customer deployment or measured business savings.
 
+The Invoice Payment Automation card reflects its tested reminder lifecycle: a PostgreSQL ledger, concurrent work claims, payment suppression, bounded failed-send recovery, 12 automated tests and a sanitised inactive n8n export. Its repository contains the case study and fictional demo scenarios; it does not claim that live emails were sent or that business savings were measured.
+
 ## Author
 
 [Akshit Singh](https://www.linkedin.com/in/akshit-singh-outlook/) - AI automation portfolio project.
