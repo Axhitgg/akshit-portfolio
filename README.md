@@ -14,6 +14,7 @@ Give a recruiter or collaborator a quick way to understand the problem behind a 
 - `styles.css`: visual styling and responsive layout.
 - `app.js`: client-side interactions and walkthrough behaviour.
 - `favicon.svg`: site icon.
+- `Akshit_Singh_AI_Automation_CV.pdf`: approved A4 CV offered from the public portfolio.
 
 ## Preview locally
 
@@ -44,7 +45,7 @@ Interactive scenarios illustrate how a workflow is intended to behave. They shou
 - Check mobile layouts, keyboard access and reduced-motion behaviour before publishing visual changes.
 - Never put API keys, database URLs or confidential client data in frontend code.
 
-No contact links, CV files or application code were changed as part of adding this README. Separate public-site housekeeping may still be required.
+The 23 October 2026 refresh updated the public contact email and LinkedIn URL, replaced the old DOCX download with the approved A4 PDF, and linked the Control Tower case study, demo script, synthetic evaluation and sanitised workflow. It does not claim customer deployment or measured business savings.
 
 ## Author
 
